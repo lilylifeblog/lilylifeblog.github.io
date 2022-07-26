@@ -1,0 +1,38 @@
+---
+layout: page
+title: Tag
+description: 文章まとめ
+background: '/img/posts/cloud-2.jpg'
+---
+
+
+<style>
+    td {padding-bottom: 15px;padding-top: 15px;}
+</style>
+
+<link rel="stylesheet" href="/assets/post-added.css">
+<!--<h1>Tags</h1>-->
+<p>Choose the <b>tag</b> to navigate</p>
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+ <span class="site-tag">
+    <a href="#{{ tag | first | slugify }}"
+        style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+             {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+    </a>
+</span>
+{% endfor %}
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% for tag in site.tags %}
+  <p><div class="left-margin" id="{{tag[0]}}">{{tag[0]}}</div></p>
+  <table style="width:100%;">
+    {% for post in tag[1] %}
+      <tr>
+        <td style="width:160px">{{ post.date | date_to_string }} </th> 
+        <td style="border-bottom: 2px solid rgb(137, 176, 199);"><a href="{{ post.url }}">{{ post.title }}</a></th>
+      </tr>
+    {% endfor %}
+  </table>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endfor %}
