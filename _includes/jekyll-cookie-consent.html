@@ -1,5 +1,5 @@
 <!-- Only add all this in production, why would I analyse myself when writing the post anyway. -->
-
+{% if jekyll.environment == 'production' %}
 
 <!-- Add cookie consent css & js -->
 <link rel="stylesheet"
@@ -66,3 +66,4 @@
     });
 </script>
 
+{% endif %}
