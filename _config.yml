@@ -13,7 +13,7 @@ instagram_username:
 linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
-google_analytics:      # out your google-analytics code ## UA-192821471-2
+google_analytics:      # out your google-analytics code #
 
 # Build settings
 markdown:           kramdown
